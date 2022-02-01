@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { projetAuth } from "../Firebase/config"
-import { useAuthContext } from "./useAuthContext"
+import useAuthContext from "./useAuthContext"
 
 export const useLogin = () => {
 

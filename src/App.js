@@ -5,7 +5,7 @@ import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
 
 // hooks 
-import { useAuthContext } from "./Hooks/useAuthContext";
+import useAuthContext from "./Hooks/useAuthContext";
 
 // composants
 import Navbar from "./Comp/Navbar";
