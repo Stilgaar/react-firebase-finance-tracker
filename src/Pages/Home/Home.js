@@ -22,7 +22,6 @@ function Home() {
             <div className={styles.sidebar}>
                 <TransactionForm uid={user.uid} />
             </div>
-
         </div>
     );
 }

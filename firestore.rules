@@ -1,0 +1,22 @@
+// pour lancer les nouvelles règles sur firebase 
+// firebase deploy --only firestore
+// pour deployer par la suite : 
+// npm run build dans ton dossier
+// puis faire firebase deploy, on aura un lien directement sur firebase (type netlify)
+// pour faire un update, il suffit de refaire la même operation
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /transaction/{document=**} {
+      // allow read, write;
+      // = allow read, create, delete, update;
+
+// peut seulement crée si l'user est auth (simple)
+     allow create: if request.auth != null;
+
+// les documents qu'on peut lire et supprimer doivent avoir l'id du créateur du document (resource = document)
+    allow read, delete: if request.auth.uid == resource.data.uid;
+    }
+  }
+}
